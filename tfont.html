@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>تجربة الخطوط العربية</title>
+<style>
+@font-face{
+	font-family:'testfont';
+	src:url('banyeh.woff2') format('woff2');
+}
+
+#viewer {
+	font-family: 'testfont';
+}
+
+#size3 {
+	font-size: 3em;
+}
+
+#size2 {
+	font-size: 2em;
+}
+
+#size1 {
+	font-size: 1em;
+}
+
+input {
+	width: 100%;
+	background-color: coral;
+}
+
+#inputfield {
+	margin-top: 3em;
+}
+</style>
+</head>
+
+<body>
+	<section id="viewer">
+		<div id="size3"></div>
+		<div id="size2"></div>
+		<div id="size1"></div>
+	</section>
+	<section id="inputfield">
+		<input type="text" id="textInput" placeholder="إكتب هنا" oninput="updateViewer()">
+	</section>
+</body>
+<script>
+function updateViewer(){
+	var x = document.getElementById("textInput").value;
+	document.getElementById("size3").innerHTML = x;
+	document.getElementById("size2").innerHTML = x;
+	document.getElementById("size1").innerHTML = x;
+}
+</script>
+</html>
